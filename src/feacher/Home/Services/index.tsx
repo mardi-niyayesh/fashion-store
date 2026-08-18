@@ -36,7 +36,7 @@ const items: itemType[] = [
 
 const Services = () => {
   return (
-    <section className="w-full py-12 sm:py-16">
+    <section className="w-full ">
       <div
         className="
           mx-auto
