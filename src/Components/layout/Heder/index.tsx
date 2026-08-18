@@ -2,6 +2,8 @@
 import Logo from "./components/logo";
 import Navigation from "./components/Navigation/Navigation";
 import AuthButton from "./components/AuthButton";
+import Basket from "./components/Basket";
+import Them from "./components/Them";
 
 const Header = () => {
   return (
@@ -44,7 +46,11 @@ const Header = () => {
               lg:gap-5
             "
           ></div>
-          <AuthButton/>
+          <div className="flex gap-1.5">
+            <Them />
+            <Basket />
+            <AuthButton />
+          </div>
         </div>
       </header>
     </>
