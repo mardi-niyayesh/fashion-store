@@ -5,6 +5,7 @@ import Link from "next/link";
 import Container from "@/Components/Container";
 
 import { Phone, MapPin, LucideIcon, Heart } from "lucide-react";
+import { FaTelegram, FaLinkedinIn } from "react-icons/fa";
 
 import { FaGithub } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -104,35 +105,8 @@ const Footer = () => {
             sm:grid-cols-3
           "
         >
-          <FooterMenu
-            title="دسترسی سریع"
-            items={[
-              {
-                title: "محصولات",
-                href: "/products",
-              },
-              {
-                title: "درباره ما",
-                href: "/about",
-              },
-            ]}
-          />
 
-          <FooterMenu
-            title="راهنما"
-            items={[
-              {
-                title: "تماس با ما",
-                href: "/Contact",
-              },
-              {
-                title: "سوالات متداول",
-                href: "/question",
-              },
-            ]}
-          />
-
-          <div
+                 <div
             className="
               col-span-2
               sm:col-span-1
@@ -164,8 +138,47 @@ const Footer = () => {
                 href="https://github.com/mardi-niyayesh"
                 external
               />
+              <ContactItem
+                icon={FaTelegram}
+                text="chanel Telegram"
+                href="https://t.me/duonex_dev"
+              />
+              <ContactItem
+                icon={FaLinkedinIn}
+                text="LinkedIn"
+                href="https://www.linkedin.com/in/niyayesh-mardi/"
+              />
             </div>
           </div>
+          <FooterMenu
+            title="دسترسی سریع"
+            items={[
+              {
+                title: "محصولات",
+                href: "/products",
+              },
+              {
+                title: "درباره ما",
+                href: "/about",
+              },
+            ]}
+          />
+
+          <FooterMenu
+            title="راهنما"
+            items={[
+              {
+                title: "تماس با ما",
+                href: "/Contact",
+              },
+              {
+                title: "سوالات متداول",
+                href: "/question",
+              },
+            ]}
+          />
+
+   
         </div>
       </Container>
 
