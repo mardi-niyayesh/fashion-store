@@ -37,7 +37,7 @@ jobs:
           npm -v
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --include=optional
 
       - name: Build
         run: npm run build
