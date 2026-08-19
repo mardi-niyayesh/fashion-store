@@ -2,7 +2,7 @@
 import { UserRound } from "lucide-react";
 
 type AuthButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const AuthButton = ({ onClick }: AuthButtonProps) => {
