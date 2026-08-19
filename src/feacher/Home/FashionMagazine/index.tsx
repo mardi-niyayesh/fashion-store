@@ -87,11 +87,19 @@ const FashionMagazine = () => {
         >
           <h2
             className="
-              mt-2
-              text-3xl
-              font-black
-              text-slate-900
-              sm:text-4xl
+             
+              mt-7
+            flex
+            items-center
+            gap-2
+            border-r-4
+            border-[#E30076]
+            pr-4
+            text-3xl
+            font-semibold
+            leading-7
+            text-slate-700
+            sm:text-base
             "
           >
             دنیای مد و استایل
