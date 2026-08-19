@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { motion } from "framer-motion";
 
 type Props = {
@@ -16,7 +15,8 @@ export default function AnimatedMenuItem({
   onClick,
 }: Props) {
   return (
-    <motion.li
+    <motion.button
+      type="button"
       initial={{
         opacity: 0,
         y: -10,
@@ -37,7 +37,11 @@ export default function AnimatedMenuItem({
         whitespace-nowrap
         transition-colors
         duration-300
-        ${active ? "text-[#E30076]" : "text-slate-700 hover:text-[#E30076]"}
+        ${
+          active
+            ? "text-[#E30076]"
+            : "text-slate-700 hover:text-[#E30076]"
+        }
       `}
     >
       {item}
@@ -55,6 +59,6 @@ export default function AnimatedMenuItem({
           ${active ? "w-full" : "w-0 group-hover:w-full"}
         `}
       />
-    </motion.li>
+    </motion.button>
   );
 }
