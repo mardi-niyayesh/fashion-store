@@ -46,6 +46,7 @@ const ProductSlider = ({ products }: ProductSliderProps) => {
         {products.map((product) => (
           <SwiperSlide key={product.id}>
             <ComponentProduct
+              id={product.id}
               img={product.img}
               title={product.title}
               description={product.description}
