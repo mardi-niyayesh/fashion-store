@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Header from "@/Components/layout/Heder";
+import Footer from "@/Components/layout/Footer";
+
 export const metadata: Metadata = {
   title: "Fashion Store",
   description: "A modern fashion store",
@@ -40,8 +43,16 @@ export default function RootLayout({
       dir="rtl"
       className={`${iranSans.variable} h-full antialiased`}
     >
-      <body className={`${iranSans.className} min-h-full flex flex-col`}>
-        {children}
+      <body
+        className={`${iranSans.className} min-h-screen flex flex-col`}
+      >
+        <Header />
+
+        <main className="flex-1">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
