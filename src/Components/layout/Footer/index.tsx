@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/Components/Container";
+
 import { Phone, MapPin, LucideIcon, Heart } from "lucide-react";
+
 import { FaGithub } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
@@ -66,13 +69,15 @@ const Footer = () => {
             <Image
               src="/imgs/logo.jpg"
               alt="لوگوی فروشگاه"
-              width={190}
-              height={45}
-              sizes="(max-width: 768px) 140px, 190px"
+              width={150}
+              height={100}
+              sizes="(max-width: 768px) 100px, 190px"
               className="
-                h-auto
-                w-35
-                object-contain
+                h-25
+                w-25
+                rounded-full
+                object-cover
+                lg:h-47.5
                 lg:w-47.5
               "
             />
@@ -102,22 +107,28 @@ const Footer = () => {
           <FooterMenu
             title="دسترسی سریع"
             items={[
-              "محصولات",
-              "دسته‌بندی‌ها",
-              "جدیدترین‌ها",
-              "تخفیف‌ها",
-              "درباره ما",
+              {
+                title: "محصولات",
+                href: "/products",
+              },
+              {
+                title: "درباره ما",
+                href: "/about",
+              },
             ]}
           />
 
           <FooterMenu
             title="راهنما"
             items={[
-              "تماس با ما",
-              "سوالات متداول",
-              "شرایط بازگشت کالا",
-              "روش‌های ارسال",
-              "قوانین و مقررات",
+              {
+                title: "تماس با ما",
+                href: "/Contact",
+              },
+              {
+                title: "سوالات متداول",
+                href: "/question",
+              },
             ]}
           />
 
@@ -146,6 +157,7 @@ const Footer = () => {
               />
 
               <ContactItem icon={MapPin} text="ایران، تهران" />
+
               <ContactItem
                 icon={FaGithub}
                 text="GitHub"
@@ -159,16 +171,16 @@ const Footer = () => {
 
       <div
         className="
-    relative
-    mx-auto
-    mt-12
-    border-t
-    border-slate-200
-    pt-6
-    text-center
-    text-sm
-    text-slate-500
-  "
+          relative
+          mx-auto
+          mt-12
+          border-t
+          border-slate-200
+          pt-6
+          text-center
+          text-sm
+          text-slate-500
+        "
       >
         <div className="flex items-center justify-center gap-1.5">
           <span>ساخته شده با</span>
@@ -176,17 +188,31 @@ const Footer = () => {
           <Heart
             size={16}
             strokeWidth={2}
-            className="fill-[#E30076] text-[#E30076]"
+            className="
+              fill-[#E30076]
+              text-[#E30076]
+            "
           />
 
-          <span>توسط نیایش</span>
+          <span>توسط نیایش مردی</span>
         </div>
       </div>
     </footer>
   );
 };
 
-function FooterMenu({ title, items }: { title: string; items: string[] }) {
+type FooterMenuItem = {
+  title: string;
+  href: string;
+};
+
+function FooterMenu({
+  title,
+  items,
+}: {
+  title: string;
+  items: FooterMenuItem[];
+}) {
   return (
     <div>
       <h3
@@ -211,17 +237,19 @@ function FooterMenu({ title, items }: { title: string; items: string[] }) {
         "
       >
         {items.map((item) => (
-          <li
-            key={item}
-            className="
-              cursor-pointer
-              transition-all
-              duration-300
-              hover:translate-x-1
-              hover:text-[#E30076]
-            "
-          >
-            {item}
+          <li key={item.title}>
+            <Link
+              href={item.href}
+              className="
+                inline-block
+                transition-all
+                duration-300
+                hover:translate-x-1
+                hover:text-[#E30076]
+              "
+            >
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -260,7 +288,13 @@ function ContactItem({
           group-hover:bg-pink-100
         "
       >
-        <Icon className="h-5 w-5 text-[#E30076]" />
+        <Icon
+          className="
+            h-5
+            w-5
+            text-[#E30076]
+          "
+        />
       </div>
 
       <p
@@ -298,6 +332,18 @@ function ContactItem({
     );
   }
 
-  return <div className="group flex items-center gap-3">{content}</div>;
+  return (
+    <div
+      className="
+        group
+        flex
+        items-center
+        gap-3
+      "
+    >
+      {content}
+    </div>
+  );
 }
+
 export default Footer;
