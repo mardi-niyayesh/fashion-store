@@ -28,7 +28,7 @@ const articles = [
     title: "چطور لباس‌های ساده را شیک‌تر ست کنیم؟",
     description:
       "با انتخاب درست رنگ‌ها، اکسسوری‌ها و ترکیب آیتم‌های ساده می‌توانید ظاهری جذاب و متفاوت داشته باشید.",
-    image: img3,
+    image: img2,
     nameAuth: "نیلوفر",
     date: "۱۵ مرداد ۱۴۰۵",
   },
@@ -38,7 +38,7 @@ const articles = [
     description:
       "قبل از خرید لباس بهتر است با نکات مهم انتخاب سایز، جنس پارچه و تناسب لباس با فرم بدن آشنا شوید.",
 
-    image: img2,
+    image: img3,
     nameAuth: "نیلا",
     date: "۱۲ مرداد ۱۴۰۵",
   },
@@ -169,6 +169,7 @@ const FashionMagazine = () => {
                   image={article.image}
                   nameAuth={article.nameAuth}
                   date={article.date}
+                  id={article.id}
                 />
               </motion.div>
             </SwiperSlide>
