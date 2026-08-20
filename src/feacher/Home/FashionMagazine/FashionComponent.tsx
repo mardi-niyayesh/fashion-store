@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { UserRound, CalendarDays, ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 type FashionComponentProps = {
   title: string;
@@ -11,6 +12,7 @@ type FashionComponentProps = {
   image: string | StaticImageData;
   nameAuth: string;
   date: string;
+  id:number
 };
 
 const FashionComponent = ({
@@ -19,6 +21,7 @@ const FashionComponent = ({
   image,
   nameAuth,
   date,
+  id
 }: FashionComponentProps) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -145,48 +148,50 @@ const FashionComponent = ({
                   {description}
                 </p>
 
-                <motion.button
-                  initial={{
-                    opacity: 0,
-                    scale: 0.95,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                  }}
-                  transition={{
-                    delay: 0.1,
-                    duration: 0.3,
-                  }}
-                  whileTap={{
-                    scale: 0.96,
-                  }}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                  className="
-                    mt-5
-                    flex
-                    items-center
-                    gap-2
-                    rounded-full
-                    bg-white
-                    px-5
-                    py-2.5
-                    text-sm
-                    font-bold
-                    text-[#E30076]
-                    transition-colors
-                    duration-300
-                    hover:bg-[#E30076]
-                    hover:text-white
-                  "
-                >
-                  <span>مشاهده جزئیات بیشتر</span>
+                <Link href={`/article/${id}`}>
+                  <motion.button
+                    initial={{
+                      opacity: 0,
+                      scale: 0.95,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    transition={{
+                      delay: 0.1,
+                      duration: 0.3,
+                    }}
+                    whileTap={{
+                      scale: 0.96,
+                    }}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="
+      mt-5
+      flex
+      items-center
+      gap-2
+      rounded-full
+      bg-white
+      px-5
+      py-2.5
+      text-sm
+      font-bold
+      text-[#E30076]
+      transition-colors
+      duration-300
+      hover:bg-[#E30076]
+      hover:text-white
+    "
+                  >
+                    <span>مشاهده جزئیات بیشتر</span>
 
-                  <ArrowLeft size={17} strokeWidth={2} />
-                </motion.button>
+                    <ArrowLeft size={17} strokeWidth={2} />
+                  </motion.button>
+                </Link>
 
                 <div className="my-4 h-px w-full bg-white/20" />
               </motion.div>
