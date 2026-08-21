@@ -2,6 +2,8 @@ import Image from "next/image";
 import ContactForm from "../Contact/ContactForm";
 import { CalendarDays } from "lucide-react";
 import { StaticImageData } from "next/image";
+import ComponentSlidMagazin from "./ComponentSlidMagazin";
+
 type DetailType = {
   img: StaticImageData;
   title: string;
@@ -145,7 +147,34 @@ const DetailMagazinComponent = ({
               </h2>
 
               <ContactForm />
+
+        
             </section>
+
+                  <div className="mx-auto w-full max-w-7xl">
+                <h2
+                  className="
+             
+              mt-8
+              mb-8
+            flex
+            items-center
+            gap-2
+            border-r-4
+            border-[#E30076]
+            pr-4
+            text-2xl
+            font-semibold
+            leading-7
+            text-slate-700
+            
+            "
+                >
+                  مقالات مرتبط
+                </h2>
+              </div>
+
+              <ComponentSlidMagazin />
           </div>
         </article>
       </div>

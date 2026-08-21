@@ -1,5 +1,6 @@
 import DetailMagazinComponent from "@/feacher/Home/FashionMagazine/DetailMagazinComponent";
-
+import ComponentSlidMagazin from "@/feacher/Home/FashionMagazine/ComponentSlidMagazin";
+import Container from "@/Components/Container";
 import img1 from "../../../../public/imgs/baner1.jpg";
 import img2 from "../../../../public/imgs/baner2.jpg";
 import img3 from "../../../../public/imgs/baner3.jpg";
@@ -86,13 +87,16 @@ const DetailMagazin = async ({ params }: PageProps) => {
   }
 
   return (
-    <DetailMagazinComponent
-      img={article.img}
-      title={article.title}
-      newAuth={article.nameAuth}
-      date={article.date}
-      description={article.description}
-    />
+    <>
+      <DetailMagazinComponent
+        img={article.img}
+        title={article.title}
+        newAuth={article.nameAuth}
+        date={article.date}
+        description={article.description}
+      />
+
+    </>
   );
 };
 
