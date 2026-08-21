@@ -51,75 +51,76 @@ const articles = [
   },
 ];
 const ComponentSlidMagazin = () => {
-  return (
-    <div
-      className="
-        w-full
-        overflow-hidden
-        px-4
-     
-        sm:px-6
-        lg:px-8
-      
-      "
+return (
+  <div
+    className="
+      w-full
+      overflow-hidden
+      bg-[var(--background)]
+      px-4
+      transition-colors
+      duration-300
+      sm:px-6
+      lg:px-8
+    "
+  >
+    <Swiper
+      modules={[Autoplay]}
+      slidesPerView={1}
+      spaceBetween={20}
+      loop
+      speed={800}
+      autoplay={{
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      }}
+      className="!overflow-visible"
     >
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView={1}
-        spaceBetween={20}
-        loop
-        speed={800}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          },
-        }}
-        className="!overflow-visible"
-      >
-        {articles.map((article, index) => (
-          <SwiperSlide key={article.id}>
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.15,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-            >
-              <FashionComponent
-                title={article.title}
-                description={article.description}
-                image={article.image}
-                nameAuth={article.nameAuth}
-                date={article.date}
-                id={article.id}
-              />
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
-  );
+      {articles.map((article, index) => (
+        <SwiperSlide key={article.id}>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+            }}
+          >
+            <FashionComponent
+              title={article.title}
+              description={article.description}
+              image={article.image}
+              nameAuth={article.nameAuth}
+              date={article.date}
+              id={article.id}
+            />
+          </motion.div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+);
 };
 
 export default ComponentSlidMagazin;

@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/Components/Container";
 
-import { Phone, MapPin, LucideIcon, Heart } from "lucide-react";
-import { FaTelegram, FaLinkedinIn } from "react-icons/fa";
+import { Phone, MapPin, Heart } from "lucide-react";
+import { FaTelegram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-import { FaGithub } from "react-icons/fa";
+import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons";
 
 const Footer = () => {
@@ -16,11 +16,11 @@ const Footer = () => {
       className="
         relative
         overflow-hidden
-        bg-gradient-to-b
-        from-slate-50
-        via-white
-        to-pink-50
+        bg-[var(--card)]
+        text-[var(--foreground)]
         py-16
+        transition-colors
+        duration-300
       "
     >
       <div
@@ -31,7 +31,8 @@ const Footer = () => {
           h-72
           w-72
           rounded-full
-          bg-pink-200/30
+          bg-[var(--primary)]
+          opacity-10
           blur-3xl
         "
       />
@@ -44,7 +45,8 @@ const Footer = () => {
           h-72
           w-72
           rounded-full
-          bg-rose-200/30
+          bg-[var(--primary)]
+          opacity-10
           blur-3xl
         "
       />
@@ -88,7 +90,9 @@ const Footer = () => {
             className="
               mt-4
               leading-8
-              text-slate-600
+              text-[var(--muted-foreground)]
+              transition-colors
+              duration-300
             "
           >
             جدیدترین و باکیفیت‌ترین محصولات پوشاک را برای ساختن استایلی خاص و
@@ -105,8 +109,7 @@ const Footer = () => {
             sm:grid-cols-3
           "
         >
-
-                 <div
+          <div
             className="
               col-span-2
               sm:col-span-1
@@ -117,7 +120,9 @@ const Footer = () => {
                 mb-6
                 text-lg
                 font-black
-                text-slate-900
+                text-[var(--foreground)]
+                transition-colors
+                duration-300
               "
             >
               ارتباط با من
@@ -138,11 +143,13 @@ const Footer = () => {
                 href="https://github.com/mardi-niyayesh"
                 external
               />
+
               <ContactItem
                 icon={FaTelegram}
                 text="chanel Telegram"
                 href="https://t.me/duonex_dev"
               />
+
               <ContactItem
                 icon={FaLinkedinIn}
                 text="LinkedIn"
@@ -150,6 +157,7 @@ const Footer = () => {
               />
             </div>
           </div>
+
           <FooterMenu
             title="دسترسی سریع"
             items={[
@@ -177,22 +185,21 @@ const Footer = () => {
               },
             ]}
           />
-
-   
         </div>
       </Container>
-
       <div
         className="
           relative
           mx-auto
           mt-12
           border-t
-          border-slate-200
+          border-[var(--border)]
           pt-6
           text-center
           text-sm
-          text-slate-500
+          text-[var(--muted-foreground)]
+          transition-colors
+          duration-300
         "
       >
         <div className="flex items-center justify-center gap-1.5">
@@ -202,8 +209,8 @@ const Footer = () => {
             size={16}
             strokeWidth={2}
             className="
-              fill-[#E30076]
-              text-[#E30076]
+              fill-[var(--primary)]
+              text-[var(--primary)]
             "
           />
 
@@ -233,7 +240,9 @@ function FooterMenu({
           mb-6
           text-lg
           font-black
-          text-slate-900
+          text-[var(--foreground)]
+          transition-colors
+          duration-300
         "
       >
         {title}
@@ -246,7 +255,7 @@ function FooterMenu({
           gap-3
           text-sm
           font-medium
-          text-slate-600
+          text-[var(--muted-foreground)]
         "
       >
         {items.map((item) => (
@@ -258,7 +267,7 @@ function FooterMenu({
                 transition-all
                 duration-300
                 hover:translate-x-1
-                hover:text-[#E30076]
+                hover:text-[var(--primary)]
               "
             >
               {item.title}
@@ -293,19 +302,22 @@ function ContactItem({
           justify-center
           rounded-2xl
           border
-          border-pink-100
-          bg-pink-50
+          border-[var(--border)]
+          bg-[var(--muted)]
           transition-all
           duration-300
-          group-hover:border-pink-200
-          group-hover:bg-pink-100
+          group-hover:border-[var(--primary)]
+          group-hover:bg-[var(--primary)]
         "
       >
         <Icon
           className="
             h-5
             w-5
-            text-[#E30076]
+            text-[var(--primary)]
+            transition-colors
+            duration-300
+            group-hover:text-[var(--primary-foreground)]
           "
         />
       </div>
@@ -315,10 +327,10 @@ function ContactItem({
           max-w-45
           text-sm
           leading-7
-          text-slate-600
+          text-[var(--muted-foreground)]
           transition-colors
           duration-300
-          group-hover:text-[#E30076]
+          group-hover:text-[var(--primary)]
         "
       >
         {text}

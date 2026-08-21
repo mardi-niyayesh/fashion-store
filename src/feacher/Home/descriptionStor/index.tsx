@@ -1,24 +1,38 @@
 "use client";
+
 import Image from "next/image";
 import imgdes from "../../../../public/imgs/des.jpg";
 import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
+
 const DescriptionStor = () => {
   return (
-    <section className="w-full px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section
+      className="
+        w-full
+        bg-[var(--background)]
+        px-4
+        py-16
+        transition-colors
+        duration-300
+        sm:px-6
+        lg:px-8
+        lg:py-24
+      "
+    >
       <div
         className="
-        mx-auto
-        flex
-        w-full
-        max-w-7xl
-        flex-col
-        items-center
-        gap-10
-        lg:flex-row
-        lg:justify-between
-        lg:gap-16
-      "
+          mx-auto
+          flex
+          w-full
+          max-w-7xl
+          flex-col
+          items-center
+          gap-10
+          lg:flex-row
+          lg:justify-between
+          lg:gap-16
+        "
       >
         <motion.div
           initial={{
@@ -38,12 +52,12 @@ const DescriptionStor = () => {
             ease: "easeOut",
           }}
           className="
-          order-2
-          w-full
-          text-right
-          lg:order-1
-          lg:max-w-2xl
-        "
+            order-2
+            w-full
+            text-right
+            lg:order-1
+            lg:max-w-2xl
+          "
         >
           <motion.h1
             initial={{
@@ -62,16 +76,21 @@ const DescriptionStor = () => {
               delay: 0.15,
             }}
             className="
-            text-2xl
-            font-black
-            leading-[1.8]
-            text-slate-900
-            sm:text-3xl
-            lg:text-4xl
-            xl:text-5xl
-          "
+              text-2xl
+              font-black
+              leading-[1.8]
+              text-[var(--foreground)]
+              transition-colors
+              duration-300
+              sm:text-3xl
+              lg:text-4xl
+              xl:text-5xl
+            "
           >
-            خرید راحت پوشاک با <span className="text-[#E30076]">نیا لند!</span>
+            خرید راحت پوشاک با{" "}
+            <span className="text-[var(--primary)]">
+              نیا لند!
+            </span>
           </motion.h1>
 
           <motion.p
@@ -91,13 +110,15 @@ const DescriptionStor = () => {
               delay: 0.3,
             }}
             className="
-            mt-6
-            text-sm
-            leading-8
-            text-slate-500
-            sm:text-base
-            sm:leading-9
-          "
+              mt-6
+              text-sm
+              leading-8
+              text-[var(--muted-foreground)]
+              transition-colors
+              duration-300
+              sm:text-base
+              sm:leading-9
+            "
           >
             ما در این فروشگاه تلاش کرده‌ایم مجموعه‌ای متنوع از جدیدترین و
             باکیفیت‌ترین پوشاک را در اختیار شما قرار دهیم؛ محصولاتی که در کنار
@@ -124,13 +145,15 @@ const DescriptionStor = () => {
               delay: 0.45,
             }}
             className="
-            mt-4
-            text-sm
-            leading-8
-            text-slate-500
-            sm:text-base
-            sm:leading-9
-          "
+              mt-4
+              text-sm
+              leading-8
+              text-[var(--muted-foreground)]
+              transition-colors
+              duration-300
+              sm:text-base
+              sm:leading-9
+            "
           >
             از لباس‌های ساده و کاربردی برای استفاده روزمره گرفته تا انتخاب‌های
             خاص و متفاوت برای موقعیت‌های ویژه، تلاش کرده‌ایم تنوعی ایجاد کنیم تا
@@ -139,7 +162,6 @@ const DescriptionStor = () => {
             ترندهای روز در سطح قابل قبولی باشند و تجربه‌ای لذت‌بخش از خرید
             آنلاین برای شما ایجاد کنند.
           </motion.p>
-
           <motion.div
             initial={{
               opacity: 0,
@@ -157,19 +179,21 @@ const DescriptionStor = () => {
               delay: 0.6,
             }}
             className="
-            mt-7
-            flex
-            items-center
-            gap-2
-            border-r-4
-            border-[#E30076]
-            pr-4
-            text-sm
-            font-semibold
-            leading-7
-            text-slate-700
-            sm:text-base
-          "
+              mt-7
+              flex
+              items-center
+              gap-2
+              border-r-4
+              border-[var(--primary)]
+              pr-4
+              text-sm
+              font-semibold
+              leading-7
+              text-[var(--foreground)]
+              transition-colors
+              duration-300
+              sm:text-base
+            "
           >
             <span>
               استایل خودت را پیدا کن، انتخاب کن و با اعتمادبه‌نفس بپوش.
@@ -185,7 +209,15 @@ const DescriptionStor = () => {
                 repeatDelay: 2,
               }}
             >
-              <Heart className="fill-[#E30076] text-[#E30076]" size={20} />
+              <Heart
+                className="
+                  fill-[var(--primary)]
+                  text-[var(--primary)]
+                  transition-colors
+                  duration-300
+                "
+                size={20}
+              />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -210,14 +242,15 @@ const DescriptionStor = () => {
             ease: "easeOut",
           }}
           className="
-          order-1
-          relative
-          w-full
-          max-w-sm
-          lg:order-2
-          lg:max-w-md
-        "
+            order-1
+            relative
+            w-full
+            max-w-sm
+            lg:order-2
+            lg:max-w-md
+          "
         >
+
           <motion.div
             initial={{
               opacity: 0,
@@ -235,15 +268,16 @@ const DescriptionStor = () => {
               delay: 0.3,
             }}
             className="
-            absolute
-            -bottom-5
-            -left-5
-            h-32
-            w-32
-            rounded-full
-            bg-pink-100
-            blur-2xl
-          "
+              absolute
+              -bottom-5
+              -left-5
+              h-32
+              w-32
+              rounded-full
+              bg-[var(--primary)]
+              opacity-20
+              blur-2xl
+            "
           />
 
           <motion.div
@@ -263,15 +297,18 @@ const DescriptionStor = () => {
               delay: 0.45,
             }}
             className="
-            absolute
-            -right-4
-            -top-4
-            h-24
-            w-24
-            rounded-full
-            bg-pink-50
-          "
+              absolute
+              -right-4
+              -top-4
+              h-24
+              w-24
+              rounded-full
+              bg-[var(--primary)]
+              opacity-10
+              blur-xl
+            "
           />
+
 
           <motion.div
             whileHover={{
@@ -281,16 +318,18 @@ const DescriptionStor = () => {
               duration: 0.4,
             }}
             className="
-            relative
-            overflow-hidden
-            rounded-[2rem]
-            border
-            border-white
-            bg-white
-            p-2
-            shadow-2xl
-            shadow-pink-100
-          "
+              relative
+              overflow-hidden
+              rounded-[2rem]
+              border
+              border-[var(--border)]
+              bg-[var(--card)]
+              p-2
+              shadow-2xl
+              shadow-black/10
+              transition-colors
+              duration-300
+            "
           >
             <Image
               src={imgdes}
@@ -298,14 +337,15 @@ const DescriptionStor = () => {
               width={600}
               height={600}
               className="
-              aspect-square
-              w-full
-              rounded-[1.5rem]
-              object-cover
-            "
+                aspect-square
+                w-full
+                rounded-[1.5rem]
+                object-cover
+              "
             />
           </motion.div>
 
+      
           <motion.div
             initial={{
               opacity: 0,
@@ -328,22 +368,38 @@ const DescriptionStor = () => {
               y: [0, -5, 0],
             }}
             className="
-            absolute
-            -bottom-5
-            right-4
-            rounded-2xl
-            border
-            border-pink-100
-            bg-white
-            px-5
-            py-3
-            shadow-lg
-            sm:right-6
-          "
+              absolute
+              -bottom-5
+              right-4
+              rounded-2xl
+              border
+              border-[var(--border)]
+              bg-[var(--card)]
+              px-5
+              py-3
+              shadow-lg
+              transition-colors
+              duration-300
+              sm:right-6
+            "
           >
-            <p className="text-xs text-slate-400">انتخابی خاص برای</p>
+            <p
+              className="
+                text-xs
+                text-[var(--muted-foreground)]
+              "
+            >
+              انتخابی خاص برای
+            </p>
 
-            <p className="mt-1 text-sm font-black text-[#E30076]">
+            <p
+              className="
+                mt-1
+                text-sm
+                font-black
+                text-[var(--primary)]
+              "
+            >
               استایل خاص تو
             </p>
           </motion.div>

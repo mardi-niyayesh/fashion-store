@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import ThemeProvider from "@/Components/layout/Heder/components/Them/ThemeProvider";
 import Header from "@/Components/layout/Heder";
 import Footer from "@/Components/layout/Footer";
 
@@ -42,17 +43,18 @@ export default function RootLayout({
       lang="fa"
       dir="rtl"
       className={`${iranSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body
-        className={`${iranSans.className} min-h-screen flex flex-col`}
-      >
-        <Header />
+      <body className={`${iranSans.className} min-h-screen flex flex-col`}>
+        <ThemeProvider>
+          <Header />
 
-        <main className="flex-1">
-          {children}
-        </main>
+          <main className="flex-1">
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

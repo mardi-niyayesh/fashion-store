@@ -14,9 +14,12 @@ const Contact = () => {
       overflow-hidden
       rounded-3xl
       border
-      border-pink-100
+      border-[var(--border)]
+      bg-[var(--card)]
       shadow-xl
-      shadow-pink-100/30
+      shadow-[var(--primary)]/10
+      transition-colors
+      duration-300
       lg:flex-row
     "
     >
@@ -37,8 +40,10 @@ const Contact = () => {
         }}
         className="
         w-full
-        bg-pink-50/40
+        bg-[var(--muted)]
         p-6
+        transition-colors
+        duration-300
         sm:p-8
         md:p-10
         lg:w-1/2
@@ -67,14 +72,25 @@ const Contact = () => {
             text-2xl
             font-black
             leading-9
-            text-slate-900
+            text-[var(--foreground)]
+            transition-colors
+            duration-300
             sm:text-3xl
           "
           >
             با ما در ارتباط باشید
           </h2>
 
-          <p className="mt-3 text-sm leading-7 text-slate-500">
+          <p
+            className="
+            mt-3
+            text-sm
+            leading-7
+            text-[var(--muted-foreground)]
+            transition-colors
+            duration-300
+          "
+          >
             اگر سوالی درباره محصولات، سفارش یا نحوه ارسال دارید، خوشحال می‌شویم
             با ما در ارتباط باشید.
           </p>
@@ -121,17 +137,25 @@ const Contact = () => {
               className="
               rounded-2xl
               border
-              border-pink-100
-              bg-white
+              border-[var(--border)]
+              bg-[var(--card)]
               p-5
-              transition-shadow
+              transition-all
               duration-300
-              hover:border-pink-200
+              hover:border-[var(--primary)]
               hover:shadow-lg
-              hover:shadow-pink-100/50
+              hover:shadow-[var(--primary)]/15
             "
             >
-              <span className="text-sm font-bold text-slate-800">
+              <span
+                className="
+                text-sm
+                font-bold
+                text-[var(--foreground)]
+                transition-colors
+                duration-300
+              "
+              >
                 {item.title}
               </span>
 
@@ -143,16 +167,25 @@ const Contact = () => {
                   mt-2
                   inline-block
                   text-sm
-                  text-slate-500
+                  text-[var(--muted-foreground)]
                   transition-colors
                   duration-300
-                  hover:text-[#E30076]
+                  hover:text-[var(--primary)]
                 "
                 >
                   {item.content}
                 </a>
               ) : (
-                <p className="mt-2 text-sm leading-7 text-slate-500">
+                <p
+                  className="
+                  mt-2
+                  text-sm
+                  leading-7
+                  text-[var(--muted-foreground)]
+                  transition-colors
+                  duration-300
+                "
+                >
                   {item.content}
                 </p>
               )}
@@ -160,7 +193,6 @@ const Contact = () => {
           ))}
         </div>
       </motion.div>
-
       <motion.div
         variants={{
           hidden: {
@@ -179,8 +211,10 @@ const Contact = () => {
         }}
         className="
         w-full
-        bg-white
+        bg-[var(--card)]
         p-6
+        transition-colors
+        duration-300
         sm:p-8
         md:p-10
         lg:w-1/2
@@ -205,11 +239,29 @@ const Contact = () => {
             }}
             className="mb-7 text-center"
           >
-            <h2 className="text-2xl font-black text-slate-900 sm:text-3xl">
+            <h2
+              className="
+              text-2xl
+              font-black
+              text-[var(--foreground)]
+              transition-colors
+              duration-300
+              sm:text-3xl
+            "
+            >
               پیام خود را برای ما ارسال کنید
             </h2>
 
-            <p className="mt-3 text-sm leading-7 text-slate-500">
+            <p
+              className="
+              mt-3
+              text-sm
+              leading-7
+              text-[var(--muted-foreground)]
+              transition-colors
+              duration-300
+            "
+            >
               سوال یا پیشنهادی دارید؟ از طریق فرم زیر با ما در ارتباط باشید.
             </p>
           </motion.div>

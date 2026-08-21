@@ -1,4 +1,5 @@
 "use client";
+
 import Logo from "./components/logo";
 import Navigation from "./components/Navigation/Navigation";
 import AuthButton from "./components/AuthButton";
@@ -7,53 +8,44 @@ import Them from "./components/Them";
 
 const Header = () => {
   return (
-    <>
-      <header
+    <header
+      className="
+    sticky
+    top-0
+    z-50
+    w-full
+    bg-[var(--background)]
+    text-[var(--foreground)]
+    border-b
+    border-[var(--border)]
+    shadow-sm
+    transition-all
+    duration-300
+  "
+    >
+      <div
         className="
-          sticky
-          top-0
-          z-50
-          w-full
-          bg-white
-          border-b
-          border-slate-100
-          shadow-sm
-          transition-all
-          duration-300
+          mx-auto
+          flex
+          max-w-7xl
+          items-center
+          justify-between
+          px-4
+          py-3
+          lg:px-8
         "
       >
-        <div
-          className="ّ
-            mx-auto
-            flex
-            max-w-7xl
-            items-center
-            justify-between
-            px-4
-            py-3
-            lg:px-8
-          "
-        >
-          <Logo />
+        <Logo />
 
-          <Navigation className="hidden lg:block" />
+        <Navigation className="hidden lg:block" />
 
-          <div
-            className="
-              flex
-              items-center
-              gap-3
-              lg:gap-5
-            "
-          ></div>
-          <div className="flex gap-1.5">
-            <Them />
-            <Basket />
-            <AuthButton />
-          </div>
+        <div className="flex items-center gap-3 lg:gap-5">
+          <Them />
+          <Basket />
+          <AuthButton />
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 

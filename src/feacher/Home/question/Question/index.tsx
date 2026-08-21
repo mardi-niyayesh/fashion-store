@@ -26,50 +26,76 @@ const itemQuestions = [
 ];
 
 const Question = () => {
-  return (
-    <section className="w-full px-4  sm:px-6 lg:px-8 mb-8 ">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-10 text-center">
-          <h2
-            className="
-    mx-auto
-    mt-2
-    flex
-    w-fit
-    items-center
-    gap-2
-    border-r-4
-    border-[#E30076]
-    pr-4
-    text-center
-    text-2xl
-    font-black
-    text-slate-900
-    sm:text-3xl
-    lg:text-4xl
-    mb-2
-  "
-          >
-            سوالات متداول
-          </h2>
+return (
+  <section
+    className="
+      mb-8
+      w-full
+      bg-[var(--background)]
+      px-4
+      transition-colors
+      duration-300
+      sm:px-6
+      lg:px-8
+    "
+  >
+    <div className="mx-auto max-w-4xl">
+      <div className="mb-10 text-center">
+        <h2
+          className="
+            mx-auto
+            mt-2
+            flex
+            w-fit
+            items-center
+            gap-2
+            border-r-4
+            border-[var(--primary)]
+            pr-4
+            text-center
+            text-2xl
+            font-black
+            text-[var(--foreground)]
+            transition-colors
+            duration-300
+            sm:text-3xl
+            lg:text-4xl
+            mb-2
+          "
+        >
+          سوالات متداول
+        </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
-            پاسخ سوالات متداول شما درباره خدمات و نحوه استفاده از امکانات سایت
-            را در این بخش مشاهده کنید.
-          </p>
-        </div>
-        <div className="flex flex-col gap-3">
-          {itemQuestions.map((item) => (
-            <QuestionComponent
-              key={item.id}
-              title={item.title}
-              text={item.text}
-            />
-          ))}
-        </div>
+        <p
+          className="
+            mx-auto
+            mt-3
+            max-w-2xl
+            text-sm
+            leading-7
+            text-[var(--muted-foreground)]
+            transition-colors
+            duration-300
+            sm:text-base
+          "
+        >
+          پاسخ سوالات متداول شما درباره خدمات و نحوه استفاده از امکانات سایت
+          را در این بخش مشاهده کنید.
+        </p>
       </div>
-    </section>
-  );
+
+      <div className="flex flex-col gap-3">
+        {itemQuestions.map((item) => (
+          <QuestionComponent
+            key={item.id}
+            title={item.title}
+            text={item.text}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+);
 };
 
 export default Question;

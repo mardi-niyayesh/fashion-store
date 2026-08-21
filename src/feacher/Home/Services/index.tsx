@@ -1,16 +1,21 @@
 "use client";
 
-import { CreditCard, Truck, ShieldCheck, type LucideIcon } from "lucide-react";
+import {
+  CreditCard,
+  Truck,
+  ShieldCheck,
+  type LucideIcon,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
-type itemType = {
+type ItemType = {
   id: number;
   icon: LucideIcon;
   title: string;
   description: string;
 };
 
-const items: itemType[] = [
+const items: ItemType[] = [
   {
     id: 1,
     icon: CreditCard,
@@ -36,7 +41,7 @@ const items: itemType[] = [
 
 const Services = () => {
   return (
-    <section className="w-full mb-5  mt-5">
+    <section className="mt-5 mb-5 w-full">
       <div
         className="
           mx-auto
@@ -86,16 +91,18 @@ const Services = () => {
                 overflow-hidden
                 rounded-3xl
                 border
-                border-slate-100
-                bg-white
+                border-[var(--border)]
+                bg-[var(--card)]
                 p-6
+                text-[var(--foreground)]
                 shadow-sm
-                transition-shadow
+                transition-all
                 duration-500
                 hover:shadow-xl
-                hover:shadow-pink-100/40
+                hover:shadow-[var(--primary)]/20
               "
             >
+
               <motion.div
                 initial={{
                   scale: 1,
@@ -117,23 +124,20 @@ const Services = () => {
                   h-32
                   w-32
                   rounded-full
-                  bg-pink-50
+                  bg-[var(--primary)]
+                  opacity-10
                 "
               />
 
               <div className="relative z-10">
+
                 <motion.div
-                  initial={{
-                    backgroundColor: "#fdf2f8",
-                    color: "#E30076",
-                  }}
                   whileHover={{
-                    backgroundColor: "#E30076",
-                    color: "#ffffff",
+                    scale: 1.08,
+                    rotate: 3,
                   }}
                   whileTap={{
-                    backgroundColor: "#E30076",
-                    color: "#ffffff",
+                    scale: 0.95,
                   }}
                   transition={{
                     duration: 0.3,
@@ -146,20 +150,24 @@ const Services = () => {
                     items-center
                     justify-center
                     rounded-2xl
+                    bg-[var(--muted)]
+                    text-[var(--primary)]
+                    transition-colors
+                    duration-300
+                    group-hover:bg-[var(--primary)]
+                    group-hover:text-[var(--primary-foreground)]
                   "
                 >
-                  <Icon size={27} strokeWidth={1.8} />
+                  <Icon
+                    size={27}
+                    strokeWidth={1.8}
+                  />
                 </motion.div>
 
+
                 <motion.h2
-                  initial={{
-                    color: "#0f172a",
-                  }}
                   whileHover={{
-                    color: "#E30076",
-                  }}
-                  whileTap={{
-                    color: "#E30076",
+                    x: -3,
                   }}
                   transition={{
                     duration: 0.3,
@@ -168,16 +176,23 @@ const Services = () => {
                     mb-3
                     text-lg
                     font-black
+                    text-[var(--foreground)]
+                    transition-colors
+                    duration-300
+                    group-hover:text-[var(--primary)]
                   "
                 >
                   {item.title}
                 </motion.h2>
 
+                {/* Description */}
                 <p
                   className="
                     text-sm
                     leading-7
-                    text-slate-500
+                    text-[var(--muted-foreground)]
+                    transition-colors
+                    duration-300
                   "
                 >
                   {item.description}

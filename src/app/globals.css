@@ -1,2 +1,43 @@
 @import "tailwindcss";
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --card: #f8f3f6;
+  --border: #e8dce2;
+
+  --primary: #8f0a4a;
+  --primary-foreground: #ffffff;
+
+  --muted: #f3edf1;
+  --muted-foreground: #6b5a63;
+}
+
+.dark {
+  --background: #160b12;
+  --foreground: #fdf4f8;
+
+  --card: #21121b;
+  --border: #432333;
+
+  --primary: #c02672;
+  --primary-foreground: #ffffff;
+
+  --muted: #2a1722;
+  --muted-foreground: #d9b8c7;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
