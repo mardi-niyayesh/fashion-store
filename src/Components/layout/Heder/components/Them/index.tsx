@@ -1,16 +1,27 @@
-import { Moon } from "lucide-react";
+"use client";
+
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
 const Them = () => {
+  const { theme, setTheme } = useTheme();
+
+  const handleClickTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   return (
     <button
+      onClick={handleClickTheme}
       className="
-      flex
+        flex
         group
         relative
         overflow-hidden
         rounded-xl
         border
         border-[#E30076]
-      px-2.5
+        px-2.5
         py-2
         text-sm
         font-bold
@@ -21,8 +32,7 @@ const Them = () => {
       "
     >
       <span className="relative z-10">
-        {" "}
-        <Moon />{" "}
+        {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
       </span>
 
       <span
